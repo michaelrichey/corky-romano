@@ -3,6 +3,7 @@ title: Second Article
 date: 2020-03-05
 tags: second
 layout: blog-layout
+category: halloween
 ---
 
 What is your favorite Halloween movie?

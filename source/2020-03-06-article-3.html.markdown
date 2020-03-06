@@ -3,6 +3,7 @@ title: Third Article
 date: 2020-03-06
 tags: three
 layout: blog-layout
+category: music
 ---
 
 Who has the best theme song?

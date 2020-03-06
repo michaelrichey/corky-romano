@@ -3,6 +3,7 @@ title: First Article
 date: 2020-03-04
 tags: example
 layout: blog-layout
+category: cats
 ---
 
 What is your favorite type of cat?

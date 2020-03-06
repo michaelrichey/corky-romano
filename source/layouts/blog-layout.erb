@@ -2,5 +2,7 @@
     <h3>Yes, this new layout</h3>
     <%= yield %>
     <h3>Yes, this new layout</h3>
+    <p>Read More:</p>
+    <% current_article.metadata[:page]['category'] %>
     <a href="/">Back to Main</a>
 <% end %>
