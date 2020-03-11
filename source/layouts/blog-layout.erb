@@ -1,8 +1,13 @@
 <% wrap_layout :layout do %>
-    <h3>Yes, this new layout</h3>
+    <img src="../images/glassline.gif">
     <%= yield %>
-    <h3>Yes, this new layout</h3>
-    <p>Read More:</p>
-    <% current_article.metadata[:page]['category'] %>
-    <a href="/">Back to Main</a>
+    <img src="../images/glassline.gif">
+    <p>READ MORE:</p>
+    <% page_articles.each_with_index do |article, i| %>
+      <div class="main-page-article-preview">
+        <h2><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></h2>
+        <%= article.summary(50) %>
+      </div>
+    <% end %>
+    
 <% end %>
