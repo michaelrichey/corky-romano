@@ -1,9 +1,19 @@
 ---
-title: Third Article
+title: Who has the best theme song?
 date: 2020-03-06
 tags: three
 layout: blog-layout
 category: music
 ---
 
-Who has the best theme song?
+Lots of people have theme music these days. Even some dogs have theme music! So who has the best theme music?
+
+I asked forty people what they thought, and they all answered incorrectly.
+
+The answer is Brutus Beefcake. In 1988, he had this as his entrance music when he entered the ring as WWF wrestler:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Z1NUNF7wO_Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+That's all! Let me know in the comments if you're wrong!
+
+
