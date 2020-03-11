@@ -1,0 +1,13 @@
+.main-page-article-preview {
+    border: gray 5px solid;
+    padding: 2vw;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.main-page-article-preview:hover {
+    border: purple 5px solid;
+    background-image: url("../images/static.gif");
+    color: purple;
+    text-shadow: teal 4px 4px;
+}
