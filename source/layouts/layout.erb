@@ -10,18 +10,23 @@
     <title><%= current_page.data.title || "Corky Romano" %></title>
 
     <%= stylesheet_link_tag "master" %>
-    <%= javascript_include_tag  "all" %>
+    
   </head>
 
   <body class="<%= page_classes %>">
     <h1 id="main-title">Welcome to the Corky Romano Blog</h1>
-    <div id='menu'>
-      <a href="/">Main</a>
-      <a href="/">News</a>
-      <a href="/">Wallpapers</a>
-      <a href="/">WinAmp Skins</a>
-      <a href="/">Links</a>
+    <div id="menu-grid">
+      <div id="menu-grid-1"></div>
+      <div id='menu'>
+        <a href="/">Main</a>
+        <p id="clippy">News</p>
+        <a href="/">Wallpapers</a>
+        <a href="/">WinAmp Skins</a>
+        <a href="/">Links</a>
+      </div>
+      <div id="menu-grid-2"></div>
     </div>
     <%= yield %>
+    <%= javascript_include_tag  "all" %>
   </body>
 </html>
