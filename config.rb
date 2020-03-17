@@ -20,6 +20,13 @@ activate :blog do |blog|
   # blog.day_link = "{year}/{month}/{day}.html"
   # blog.default_extension = ".markdown"
 
+    blog.custom_collections = {
+    category: {
+      link: '/categories/{category}.html',
+      template: '/category-template.html'
+    }
+  }
+
   blog.tag_template = "tag.html"
   blog.calendar_template = "calendar.html"
   blog.permalink = "{category}/{title}.html"
