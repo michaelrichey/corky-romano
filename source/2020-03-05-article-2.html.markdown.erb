@@ -1,0 +1,34 @@
+---
+title: What is your favorite Halloween movie?
+date: 2020-03-05
+tags: second
+layout: blog-layout
+category: halloween
+---
+
+Halloween is only eight months away, so it's high time you start building your Halloween movie watchlist for this year. If you're just starting out, here is a list of films to carry you through the spooky season.
+
+<ol>
+  <% data.halloweenmovies.each do |film| %>
+  <li><%= film.title %>
+    <ul>
+      <li><%= film.synopsis %></li>
+    </ul>
+  </li>
+  <% end %>
+</ol>
+
+Well, maybe that's not enough movies for you. Here is some extra credit:
+
+<ol>
+<% data.halloweenmovies2.each do |film| %>
+  <li>
+    <% film.each do |name| %>
+      <%= name['title']%>
+        <ul><%= name['synopsis']%></ul>
+    <% end %>
+  </li>
+<% end %>
+</ol>
+
+If you have suggestions, leave them in the comments below!
