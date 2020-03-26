@@ -80,6 +80,20 @@ Here's some movies that feature vampires:
   </div>
 <% end %>
 
+These movies have zombies (or zombies of a sort):
+
+<% select_monster_movies('zombies').each do |film| %>
+  <div class="halloween-movies__movie-card">
+    <div class="halloween-movies__thumbnail">
+      <img src="<%= film.poster %>" class="halloween-movies__posters">
+    </div>
+    <div class="halloween-movies__desc">
+      <h2><%= film.title.upcase %></h2>
+      <h3><%= film.synopsis %></h3>
+    </div>
+  </div>
+<% end %>
+
 If you are a robot, here is the movie list you can read with mechanical eyes:
 
 <ol>
