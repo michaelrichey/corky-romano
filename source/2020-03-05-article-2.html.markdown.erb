@@ -54,13 +54,13 @@ And some movie posters:
 
 Here is a list of movies with mutants in them:
 
-<% select_monster_movies_mutant.each do |film| %>
+<% select_monster_movies('mutant').each do |film| %>
   <div class="halloween-movies__movie-card">
     <div class="halloween-movies__thumbnail">
       <img src="<%= film.poster %>" class="halloween-movies__posters">
     </div>
     <div class="halloween-movies__desc">
-      <h2><%= film.title %></h2>
+      <h2><%= film.title.upcase %></h2>
       <h3><%= film.synopsis %></h3>
     </div>
   </div>
@@ -68,16 +68,20 @@ Here is a list of movies with mutants in them:
 
 Here's some movies that feature vampires:
 
-<% select_monster_movies_vampire.each do |film| %>
+<% select_monster_movies('vampire').each do |film| %>
   <div class="halloween-movies__movie-card">
     <div class="halloween-movies__thumbnail">
       <img src="<%= film.poster %>" class="halloween-movies__posters">
     </div>
     <div class="halloween-movies__desc">
-      <h2><%= film.title %></h2>
+      <h2><%= film.title.upcase %></h2>
       <h3><%= film.synopsis %></h3>
     </div>
   </div>
 <% end %>
+
+If you are a robot, here is the movie list you can read with mechanical eyes:
+
+
 
 If you have suggestions, leave them in the comments below!

@@ -12,15 +12,10 @@ module SiteHelpers
         end
     end
 
-    def select_monster_movies_mutant
+    def select_monster_movies(monster)
         data.halloweenmovies.select do |film|
-            film.monster == 'mutant'
+            film.monster == monster
         end
     end
 
-    def select_monster_movies_vampire
-        data.halloweenmovies.select do |film|
-            film.monster == 'vampire'
-        end
-    end
 end
