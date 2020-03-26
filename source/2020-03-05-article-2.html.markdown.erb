@@ -33,6 +33,23 @@ Well, maybe that's not enough movies for you. Here is some extra credit:
 
 Here is more info:
 
-<% log_movie_tiles %>
+<ul>
+<% detailed_info.each do |film| %>
+  <li>
+    Title: <%= film.title %>
+    <ul>
+      <li>Director: <%= film.director %></li>
+      <li>Writer: <%= film.writer %></li>
+      <li>Release Date: <%= film.release %></li>
+    </ul>
+  </li>
+<% end %>
+</ul>
+
+And some movie posters:
+
+<% detailed_info.each do |film| %>
+  <img src="<%= film.poster %>" height="300px">
+<% end %>
 
 If you have suggestions, leave them in the comments below!
