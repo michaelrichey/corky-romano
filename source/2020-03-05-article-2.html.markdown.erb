@@ -55,13 +55,29 @@ And some movie posters:
 Here is a list of movies with mutants in them:
 
 <% select_monster_movies_mutant.each do |film| %>
-  <img src="<%= film.poster %>" class="halloween-movies__mutant-posters">
+  <div class="halloween-movies__movie-card">
+    <div class="halloween-movies__thumbnail">
+      <img src="<%= film.poster %>" class="halloween-movies__posters">
+    </div>
+    <div class="halloween-movies__desc">
+      <h2><%= film.title %></h2>
+      <h3><%= film.synopsis %></h3>
+    </div>
+  </div>
 <% end %>
 
 Here's some movies that feature vampires:
 
 <% select_monster_movies_vampire.each do |film| %>
-  <img src="<%= film.poster %>" class="halloween-movies__mutant-posters">
+  <div class="halloween-movies__movie-card">
+    <div class="halloween-movies__thumbnail">
+      <img src="<%= film.poster %>" class="halloween-movies__posters">
+    </div>
+    <div class="halloween-movies__desc">
+      <h2><%= film.title %></h2>
+      <h3><%= film.synopsis %></h3>
+    </div>
+  </div>
 <% end %>
 
 If you have suggestions, leave them in the comments below!
