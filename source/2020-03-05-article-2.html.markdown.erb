@@ -82,6 +82,10 @@ Here's some movies that feature vampires:
 
 If you are a robot, here is the movie list you can read with mechanical eyes:
 
-
+<ol>
+<% movies_for_robots.each do |film| %>
+  <li><%= film %></li>
+<% end %>
+</ol>
 
 If you have suggestions, leave them in the comments below!

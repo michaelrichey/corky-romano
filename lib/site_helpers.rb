@@ -18,4 +18,10 @@ module SiteHelpers
         end
     end
 
+    def movies_for_robots
+        data.halloweenmovies.map do |film|
+            film.title + " with Robots!"
+        end
+    end
+
 end
