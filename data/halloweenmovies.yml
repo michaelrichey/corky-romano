@@ -4,21 +4,46 @@
   writer: Tom Holland
   release: August 2, 1985
   poster: https://upload.wikimedia.org/wikipedia/en/e/e2/Fright_night_poster.jpg
+  monster: vampire
 - title: "Phenomena"
   synopsis: "A girl at a boarding school has the power to control insects with her mind. Also someone is killing people with scissors."
   director: Dario Argento
   writer: Dario Argento, Franco Ferrini
   release: January 31, 1985
   poster: https://upload.wikimedia.org/wikipedia/en/1/1e/Phenomena-poster.jpg
+  monster: mutant
 - title: "Basketcase"
   synopsis: "A man carries his muatant brother around in a basket."
   director: Frank Henenlotter
   writer: Frank Henenlotter
   release: April 7, 1982
   poster: https://upload.wikimedia.org/wikipedia/en/1/1d/Basketcaseposter.jpg 
+  monster: mutant
 - title: "Nightmare on Elm Street 4: The Dream Master"
   synopsis: "This is the one where Freddy turns a kid into a pizza."
   director: Renny Harlin
   writer: Brian Helgeland, Ken and Jim Wheats
   release: August 19, 1988
   poster: https://upload.wikimedia.org/wikipedia/en/2/26/A_Nightmare_on_Elm_Street_4_-_The_Dream_Master_%281988%29_theatrical_poster.jpg
+  monster: Freddy Krueger
+- title: "Once Bitten"
+  synopsis: "Jim Carrey meets a vampire lady."
+  director: Howard Storm
+  writer: Jonathan Roberts, David Hines, Jeffrey Hause, Dimitri Villard (story)
+  release: November 15, 1985
+  poster: https://upload.wikimedia.org/wikipedia/en/1/1a/Oncebittenposter.jpg
+  monster: vampire
+- title: "Buffy the Vampire Slayer"
+  synopsis: "A cheerleader has to fight vampires."
+  director: Fran Rubel Kuzui
+  writer: Joss Whedon
+  release: July 31, 1992
+  poster: https://upload.wikimedia.org/wikipedia/en/0/09/Buffy_The_Vampire_Slayer_Movie.jpg
+  monster: vampire
+- title: "C.H.U.D."
+  synopsis: "People are being dragged into the sewer by mutants"
+  director: Douglas Cheek
+  writer: Parnell Hall
+  release: August 31, 1984
+  poster: https://upload.wikimedia.org/wikipedia/en/7/7a/CHUD_poster.jpg
+  monster: mutant
