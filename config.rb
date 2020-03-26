@@ -73,6 +73,9 @@ page "/feed.xml", layout: false
 # Helpers
 ###
 
+require "lib/site_helpers"
+helpers SiteHelpers
+
 # Automatic image dimensions on image_tag helper
 # activate :automatic_image_sizes
 
