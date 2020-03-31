@@ -20,8 +20,16 @@ activate :blog do |blog|
   # blog.day_link = "{year}/{month}/{day}.html"
   # blog.default_extension = ".markdown"
 
+    blog.custom_collections = {
+    category: {
+      link: '/categories/{category}.html',
+      template: '/category-template.html'
+    }
+  }
+
   blog.tag_template = "tag.html"
   blog.calendar_template = "calendar.html"
+  blog.permalink = "{category}/{title}.html"
 
   # Enable pagination
   # blog.paginate = true
@@ -64,6 +72,9 @@ page "/feed.xml", layout: false
 ###
 # Helpers
 ###
+
+require "lib/site_helpers"
+helpers SiteHelpers
 
 # Automatic image dimensions on image_tag helper
 # activate :automatic_image_sizes

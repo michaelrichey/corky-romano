@@ -1,0 +1,48 @@
+#menu-grid {
+  display: grid;
+  grid-template-areas: "menu-grid-1 menumain menu-grid-2";
+}
+
+#menu-grid-1 {
+  grid-area: menu-grid-1;
+}
+
+#menu {
+  background-color: teal;
+  padding: 2vw;
+  width: 450px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 4vw;
+  margin-top: 4vw;
+  border-radius: 20px;
+  font-weight: 900;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 24px;
+  grid-area: menumain;
+  text-align: center;
+}
+
+#menu-grid-2 {
+  grid-area: menu-grid-2;
+}
+
+.show-clippy {
+  width: 15vw;
+  position: fixed;
+  top: 1vw;
+  left: 1vw;
+  z-index: 2;
+  background-color: rgb(243, 243, 155);
+  padding: 1%;
+  margin-right: 60px;
+  border-radius: 20px;
+  img {
+    width: 50%;
+  }
+}
+
+.clippy {
+  color: pink;
+}

@@ -1,0 +1,105 @@
+---
+title: What is your favorite Halloween movie?
+date: 2020-03-05
+tags: second
+layout: blog-layout
+category: halloween
+---
+
+Halloween is only eight months away, so it's high time you start building your Halloween movie watchlist for this year. If you're just starting out, here is a list of films to carry you through the spooky season.
+
+<ol>
+  <% data.halloweenmovies.each do |film| %>
+  <li><%= film.title %>
+    <ul>
+      <li><%= film.synopsis %></li>
+    </ul>
+  </li>
+  <% end %>
+</ol>
+
+Well, maybe that's not enough movies for you. Here is some extra credit:
+
+<ol>
+<% data.halloweenmovies2.each do |film| %>
+  <li>
+    <% film.each do |name| %>
+      <%= name['title']%>
+        <ul><%= name['synopsis']%></ul>
+    <% end %>
+  </li>
+<% end %>
+</ol>
+
+Here is more info:
+
+<ul>
+<% detailed_info.each do |film| %>
+  <li>
+    Title: <%= film.title %>
+    <ul>
+      <li>Director: <%= film.director %></li>
+      <li>Writer: <%= film.writer %></li>
+      <li>Release Date: <%= film.release %></li>
+    </ul>
+  </li>
+<% end %>
+</ul>
+
+And some movie posters:
+
+<% detailed_info.each do |film| %>
+  <img src="<%= film.poster %>" height="300px">
+<% end %>
+
+Here is a list of movies with mutants in them:
+
+<% select_monster_movies('mutant').each do |film| %>
+  <div class="halloween-movies__movie-card">
+    <div class="halloween-movies__thumbnail">
+      <img src="<%= film.poster %>" class="halloween-movies__posters">
+    </div>
+    <div class="halloween-movies__desc">
+      <h2><%= film.title.upcase %></h2>
+      <h3><%= film.synopsis %></h3>
+    </div>
+  </div>
+<% end %>
+
+Here's some movies that feature vampires:
+
+<% select_monster_movies('vampire').each do |film| %>
+  <div class="halloween-movies__movie-card">
+    <div class="halloween-movies__thumbnail">
+      <img src="<%= film.poster %>" class="halloween-movies__posters">
+    </div>
+    <div class="halloween-movies__desc">
+      <h2><%= film.title.upcase %></h2>
+      <h3><%= film.synopsis %></h3>
+    </div>
+  </div>
+<% end %>
+
+These movies have zombies (or zombies of a sort):
+
+<% select_monster_movies('zombies').each do |film| %>
+  <div class="halloween-movies__movie-card">
+    <div class="halloween-movies__thumbnail">
+      <img src="<%= film.poster %>" class="halloween-movies__posters">
+    </div>
+    <div class="halloween-movies__desc">
+      <h2><%= film.title.upcase %></h2>
+      <h3><%= film.synopsis %></h3>
+    </div>
+  </div>
+<% end %>
+
+If you are a robot, here is the movie list you can read with mechanical eyes:
+
+<ol>
+<% movies_for_robots.each do |film| %>
+  <li><%= film %></li>
+<% end %>
+</ol>
+
+If you have suggestions, leave them in the comments below!
