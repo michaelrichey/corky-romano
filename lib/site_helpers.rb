@@ -41,4 +41,16 @@ module SiteHelpers
 
     # Theme song-related
 
+    def eighties_songs
+        data.themesongs.select do |song|
+            song.year < 1990
+        end
+    end
+
+    def nineties_songs
+        data.themesongs.select do |song|
+            song.year > 1990
+        end
+    end
+
 end

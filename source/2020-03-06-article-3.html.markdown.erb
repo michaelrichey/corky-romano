@@ -22,6 +22,22 @@ Here are some of the answers that might be acceptable:
     <% end %>
 </ol>
 
+Here are all the themes from the 1980s:
+
+<ul>
+    <% eighties_songs.each do |song| %>
+        <li><em><%= song.title%></em> from <%= song.from%> (<%= song.year%>)</li>
+    <% end %>
+</ul>
+
+Here are all the themes from the 1990s:
+
+<ul>
+    <% nineties_songs.each do |song| %>
+        <li><em><%= song.title%></em> from <%= song.from%> (<%= song.year%>)</li>
+    <% end %>
+</ul>
+
 That's all! Let me know in the comments if you're wrong!
 
 
