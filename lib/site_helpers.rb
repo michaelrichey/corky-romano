@@ -24,4 +24,17 @@ module SiteHelpers
         end
     end
 
+    def get_movie_data_by_title(title)
+        filmtitle = data.halloweenmovies.select do |film|
+            film.title == title
+        end
+        filmtitle
+    end
+
+    def get_list_of_recs(reclist)
+        reclist.map do |title|
+            get_movie_data_by_title(title)[0]
+        end
+    end
+
 end
