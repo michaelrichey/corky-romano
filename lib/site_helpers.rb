@@ -1,5 +1,7 @@
 module SiteHelpers
 
+    # Halloween-related
+
     def log_movie_titles
       data.halloweenmovies.each do |title|
         puts title
@@ -36,5 +38,7 @@ module SiteHelpers
             get_movie_data_by_title(title)[0]
         end
     end
+
+    # Theme song-related
 
 end
