@@ -39,10 +39,16 @@ module SiteHelpers
         end
     end
 
-    def test_card
-        content_tag :div, class: 'halloween-movies__movie-card' do
-            phrase = 'hello werld'
+    def test_card(movielist)
+
+        movielist.each do |film|
+            content_tag :div, class: 'halloween-movies__movie-card' do
+                content_tag :h2 do
+                    phrase = "#{film.title}"
+                end
+            end
         end
+
     end
 
     # Theme song-related
