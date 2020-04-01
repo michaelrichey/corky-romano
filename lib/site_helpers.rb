@@ -39,6 +39,12 @@ module SiteHelpers
         end
     end
 
+    def test_card
+        content_tag :div, class: 'halloween-movies__movie-card' do
+            phrase = 'hello werld'
+        end
+    end
+
     # Theme song-related
 
     def eighties_songs
