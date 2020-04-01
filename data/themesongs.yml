@@ -2,15 +2,36 @@
   from: 'World Wrestling Federation'
   link: 'https://youtu.be/4JvNSdsQNqg'
   embed: '<iframe width="560" height="315" src="https://www.youtube.com/embed/4JvNSdsQNqg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+  year: 1988
 - title: 'Doin\' It The Best I Can'
   from: 'Just the Ten of Us'
   link: 'https://youtu.be/Lq74ud4Ra2M'
   embed: '<iframe width="560" height="315" src="https://www.youtube.com/embed/Lq74ud4Ra2M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+  year: 1988
 - title: 'Standing Tall'
   from: 'Perfect Strangers'
   link: 'https://youtu.be/GOMIjYr28qg'
   embed: '<iframe width="560" height="315" src="https://www.youtube.com/embed/GOMIjYr28qg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+  year: 1986
 - title: 'Opening Theme'
   from: '恐竜戦隊ジュウレンジャー'
   link: 'https://youtu.be/k308dg1Cynk'
   embed: '<iframe width="560" height="315" src="https://www.youtube.com/embed/k308dg1Cynk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+  year: 1992
+- title: 'Title Theme'
+  from: 'My Brother and Me'
+  link: 'https://youtu.be/lVKgo4LEfSU'
+  embed: '<iframe width="560" height="315" src="https://www.youtube.com/embed/lVKgo4LEfSU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+  year: 1994
+- title: 'Hey Sandy'
+  from: 'The Adventures of Pete & Pete'
+  link: 'https://youtu.be/DRUD8NqLGuc'
+  embed: '<iframe width="560" height="315" src="https://www.youtube.com/embed/DRUD8NqLGuc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+  year: 1991
+- title: 'Having An Average Weekend'
+  from: 'Kids in the Hall'
+  link: 'https://youtu.be/nhb138gLzJo'
+  embed: '<iframe width="560" height="315" src="https://www.youtube.com/embed/nhb138gLzJo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+  year: 1988
+
+  
