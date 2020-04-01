@@ -102,4 +102,26 @@ If you are a robot, here is the movie list you can read with mechanical eyes:
 <% end %>
 </ol>
 
+If you can only watch three movies this Halloween, here are the three we recommend the most:
+
+<% reclist = data.halloweenrecommendations %>
+
+<ol>
+  <% get_list_of_recs(reclist).each do |film| %>
+    <div class="halloween-movies__movie-card">
+      <div class="halloween-movies__thumbnail">
+        <img src="<%= film.poster %>" class="halloween-movies__posters">
+      </div>
+      <div class="halloween-movies__desc">
+        <h2><%= film.title.upcase %></h2>
+        <h3>Directed by: <%= film.director %></h3>
+      </div>
+    </div>
+  <% end %>
+</ol>
+
+
+
+
+
 If you have suggestions, leave them in the comments below!
