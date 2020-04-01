@@ -14,11 +14,13 @@ Here are some of the answers that might be acceptable:
 
 <ol>
     <% data.themesongs.each do |song| %>
-        <li><%= song.title %></li>
+        <h2>Song Title: <%= song.title %></h2>
+        <ul>
+            <h3>Thing it's from: <%= song.from %></h3>
+            <%= song.embed %>
+        </ul>
     <% end %>
 </ol>
-
-<%= data.themesongs %>
 
 That's all! Let me know in the comments if you're wrong!
 
