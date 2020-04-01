@@ -10,9 +10,15 @@ Lots of people have theme music these days. Even some dogs have theme music! So 
 
 I asked forty people what they thought, and they all answered incorrectly.
 
-The answer is Brutus Beefcake. In 1988, he had this as his entrance music when he entered the ring as WWF wrestler:
+Here are some of the answers that might be acceptable:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/4JvNSdsQNqg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<ol>
+    <% data.themesongs.each do |song| %>
+        <li><%= song.title %></li>
+    <% end %>
+</ol>
+
+<%= data.themesongs %>
 
 That's all! Let me know in the comments if you're wrong!
 
