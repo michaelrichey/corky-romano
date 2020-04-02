@@ -41,13 +41,23 @@ module SiteHelpers
 
     def test_card(film)
 
-        content_tag :div, class: 'halloween-movies__movie-card' do
-            content_tag :h2 do
-                phrase = "#{film.title}"
+        image =
+            content_tag :div, class: 'halloween-movies__thumbnail' do
+                image_tag("#{film.poster}", class: "halloween-movies__posters")
             end
-        end
 
+        text =
+            content_tag(:div, class: "halloween-movies__desc") do
+                content_tag(:h2, "#{film.title}") + content_tag(:h3, "#{film.synopsis}")
+            end
+        
+        content_tag :div, class: 'halloween-movies__movie-card' do
+            [image, text].join
+        end
+        
     end
+
+    # content_tag :div, class: 'halloween-movies__desc' do
 
     # Theme song-related
 
