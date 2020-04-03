@@ -13,9 +13,17 @@ I asked forty people what they thought, and they all answered incorrectly.
 Here are some of the answers that might be acceptable:
 
 <div>
+    <% data.themesongs.each do |songs| %>
+        <%= theme_song_card(songs) %>
+    <% end %>
+</div>
+
+breakbreakbreakbreakbreak
+
+<div>
     <% data.themesongs.each do |song| %>
         <div class="theme-song-card">
-            <span><%= song.embed %></span>
+            <%= song.embed %>
             <div class="theme-song-card__info-box">
                 <h2>Song Title: <%= song.title %></h2>
                 <h3>Show: <%= song.from %></h3>
