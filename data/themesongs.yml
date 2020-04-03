@@ -33,3 +33,8 @@
   link: 'https://youtu.be/nhb138gLzJo'
   embed: '<iframe class="theme-song-card__emebed" src="https://www.youtube.com/embed/nhb138gLzJo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
   year: 1988
+- title: 'Main Theme'
+  from: 'Airwolf'
+  link: 'https://youtu.be/SfyhL-pFFMw'
+  embed: '<iframe class="theme-song-card__emebed" src="https://www.youtube.com/embed/SfyhL-pFFMw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+  year: 1988
