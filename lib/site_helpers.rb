@@ -85,7 +85,7 @@ module SiteHelpers
     end
 
     def theme_song_card__embed(song)
-        song.embed
+        "<iframe class=\"theme-song-card__embed\" src=\"https://www.youtube.com/embed/#{song.link}\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
     end
 
     def theme_song_card__info_box(song)
