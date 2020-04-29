@@ -12,15 +12,11 @@ I asked forty people what they thought, and they all answered incorrectly.
 
 Here are some of the answers that might be acceptable:
 
-<ol>
-    <% data.themesongs.each do |song| %>
-        <h2>Song Title: <%= song.title %></h2>
-        <ul>
-            <h3>Thing it's from: <%= song.from %></h3>
-            <%= song.embed %>
-        </ul>
+<div>
+    <% data.themesongs.each do |songs| %>
+        <%= theme_song_card(songs) %>
     <% end %>
-</ol>
+</div>
 
 Here are all the themes from the 1980s:
 

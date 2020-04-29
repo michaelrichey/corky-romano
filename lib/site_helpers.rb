@@ -39,6 +39,26 @@ module SiteHelpers
         end
     end
 
+    def test_card(film)
+
+        image =
+            content_tag :div, class: 'halloween-movies__thumbnail' do
+                image_tag("#{film.poster}", class: "halloween-movies__posters")
+            end
+
+        text =
+            content_tag(:div, class: "halloween-movies__desc") do
+                content_tag(:h2, "#{film.title}") + content_tag(:h3, "#{film.synopsis}")
+            end
+        
+        content_tag :div, class: 'halloween-movies__movie-card' do
+            [image, text].join
+        end
+        
+    end
+
+    # content_tag :div, class: 'halloween-movies__desc' do
+
     # Theme song-related
 
     def eighties_songs
@@ -52,5 +72,48 @@ module SiteHelpers
             song.year > 1990
         end
     end
+
+    # theme song card helpers
+
+    def theme_song_card(song)
+        content_tag :div, class: "theme-song-card" do
+            embed = theme_song_card__embed(song)
+            infobox = theme_song_card__info_box(song)
+            [embed, infobox].join
+        end
+        
+    end
+
+    def theme_song_card__embed(song)
+        "<iframe class=\"theme-song-card__embed\" src=\"https://www.youtube.com/embed/#{song.link}\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
+    end
+
+    def theme_song_card__info_box(song)
+        content_tag :div, class: "theme-song-card__info-box" do
+            title = theme_song_card__info_box_title(song)
+            show = theme_song_card__info_box_show(song)
+            year = theme_song_card__info_box_year(song)
+            [title, show, year].join
+        end
+    end
+
+    def theme_song_card__info_box_title(song)
+        content_tag :h2 do
+            'Title: ' + song.title
+        end
+    end
+
+    def theme_song_card__info_box_show(song)
+        content_tag :h3 do
+            'Show: ' + song.from
+        end
+    end
+
+    def theme_song_card__info_box_year(song)
+        content_tag :h3 do
+            'Year: ' + song.year.to_s
+        end
+    end
+
 
 end
