@@ -5,11 +5,153 @@ layout: blog-layout
 category: javascript
 ---
 
-Hello. This is a place for us to add notes for the book Eloquent Javascript.
+Hello. This is a place for us to add notes for the book Eloquent Javascript. Today's chapter: [Program Structure](https://eloquentjavascript.net/02_program_structure.html)
 
 ## Michael's Notes
 
-asdf
+### Expressions and Statements
+
+Every value written literally is an expression. `22` is an expression. `"Superchunk"` is an expression.
+
+Expressions can also contain other expressions and operators.
+
+A statement is like a "complete sentence" in JS. It's made up of expressions. And it's not a statement unless it does something to affect the world or the program. These effects are called "side effects."
+
+You should add a semicolon at the end of statements.
+
+### Bindings
+
+When we make a statement, the returned value has to be used immediately, or it will disappear in the smoke and fire.
+
+We need to grab it, capture it.
+
+We do this with bindings. This can be achieved by storing values in a variable.
+
+> `let x = 5`
+
+Now we can use the variable `x` as an expression. It means 5. It is 5.
+
+> `x * 5` this returns 25
+
+You can redefine variables with `=`.
+
+Think of variables like tentacles. They grab on to values rather than "storing" them.
+
+Bindings defined with `const` do not change. `let` variables can change.
+
+### Binding Names
+
+Binding names can contain letters, numbers, _ and $. But they can't start with numbers.
+
+There are also a number of reserved words that can't be used as variables. But don't worry about those.
+
+### The Environment
+
+The environment is all the bindings and values that make up a program. Even when a program is empty there are still default values that exist in the language.
+
+### Functions
+
+A function is called by putting a vaiable name that returns a function value. Usually there's parentheses after the variable name.
+
+Functions do things.
+
+Values given to functions are called arguments.
+
+### Return Values
+
+Sometimes functions don't "do" anything. Instead they return values.
+
+### Control Flow
+
+Function execute from top to bottom. They're like a straight line.
+
+### Conditional Execution
+
+But if you want branching paths, you can use the `if` keyword. You put the condition in parentheses. Then a code block in brackets. If the condition is true, then it runs.
+
+If it's not trued, you need another code block. That's when you use the `else` keyword. Just use `else` then a code block in brackets. Because if it's not the first condition, it will be the second.
+
+If you have multiple conditions, you can use `else if` after your initial `if`. Then a condition in parentheses and a code block in brackets.
+
+### While and Do Loops
+
+Sometimes you need to execute a function over and over. For this you use the keyword `while` then a condition and a code block in brackets. Until the condition is met, the code will continue to run, start over, run, start over...
+
+You can also achieve this with the `do` keyword, with the only difference being the code will always at least run once. Even if the conditionn is not met, you get the code one time.
+
+### Indenting code
+
+You don't have to indent code, but it makes it more readable. Any time a new code block begins, indent. 
+
+### For Loops
+
+The for loop can be used when you want to continue doing something until a counter has reached a certain number. You use the keyword `for` then in parentheses three statements:
+
+- the variable that stores the initial value
+- the condition that needs to be met
+- the thing that's going to happen to the initial value that changes it
+
+### Breaking Out of a Loops
+
+If you create a loop that does not have an end statement or a condition that needs to met to end the loop, it will create an infinite loop.
+
+But you can break a loop by using the keyword `break`. When the loop encounters `break`, the loop ends.
+
+Similarly, the keyword `continue` can be used to break out of a certain part of the loop and continue with the next part of the loop.
+
+### Updating Bindings Succinctly
+
+When updating your initial variable as it continues through a loop, you usually do something like:
+
+> `value = value + 1`
+
+But if you want to be tricky and pro, you can use the shortcut:
+
+> `value += 1`
+
+This is the same thing. It counts up one. You can also do:
+
+> `value++`
+
+I like this one the best.
+
+To go down you can do:
+
+- `value =- 1`
+- `value--`
+
+### Switches Get Stitches
+
+You can also control flow by using a switch statement.
+
+Use the keyword `switch` with a code block in parentheses.
+
+Then depending on the keyword passed in??? (I think?)
+
+Use the keyword `case` with a string. If the string matches what was passed in??? (I think?) then the code block will run.
+
+Seems more like a choose your own adventure style of running code blocks.
+
+If no matching value is found, the `default` code block will run.
+
+### Capitalization
+
+Use camel casing
+
+> `variableNamesAreLikeThis`
+
+### Comments
+
+When you want to make notes for yourself or other humans and NOT the computer, you can comment them out with double foward eslashes.
+
+> `// For human eyes only ~~♫`
+
+You can also comment out whole giant blocks of text.
+
+> `/* Here comes the big block of text.
+Which continues on this line.
+And this line.
+So many lines.*/`
 
 ## Javi's Notes
 
