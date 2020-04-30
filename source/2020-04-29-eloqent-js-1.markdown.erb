@@ -7,9 +7,208 @@ category: javascript
 
 Hello. This is a place for us to add notes for the book Eloquent Javascript.
 
+Today's chapter: [Values, Types, and Operators](https://eloquentjavascript.net/01_values.html)
+
 ## Michael's Notes
 
-asdf
+### Numbers
+
+Numbers are written like this: `13`
+
+Fractional numbers us a dot: `9.81`
+
+You can use `e` for exponent numbers: `2.998e8`
+
+> `2.998e8 = 2.998 × 108 = 299,800,000`
+
+Numbers smaller than 9 quadrillion are guaranteed to be precise, but fractional numbers are not. Because you only have 64 bits to store numbers, numbers lose precision. So don't use a calculator you made in Javascript to do your taxes.
+
+### Arithemetic
+
+In Javascript you have operators that you can use to do math. For example `+` will add things together. `*` will multiply things. When you make an expression like:
+
+> `4 * 100`
+
+You will get back 400.
+
+> `3 + 33`
+
+This will return 36.
+
+There's also the subtraction `-` and division `/` operators.
+
+If you're smashing a lot of math together with multiple operators like so:
+
+> `4 * 5 + 2 / 9 - 3 + 6`
+
+When trying to figure out how this will shake out, remember some operators have precedence. `*` and `/` are equal and come first. Then `+` and `-`. But just wrap things in (parentheses) and they will get mathed on their own.
+
+> `4 * (5 + 2) / (9 - 3) + 6`
+
+The `%` operator is used for remainder. `7 / 2` will give you the result of 7 divided by 2. But `7 % 2` will give you the _remainder_ of 7 divided by 2.
+
+### Special Numbers
+
+There are two special numbers:
+
+- `Infinity`
+- `Nan`
+
+Infinity is what it sounds like. Nan is "not a number". Both of these are not meaningful results.
+
+### Strings
+
+Strings are text. Or actually "text," because it need not be text like I'm typing here. It can be integers or symbols or whatever, as long as it's wrapped in:
+
+- `""`
+- `''`
+- ``
+
+A backslash `\` can escape characters so they will actually be used literally as themselves.
+
+`\n` will give you a line break in code world. Like so:
+
+> `Here is a line.\nThen it breaks here to second line.`
+
+This `\t` is a tab character. I'm not sure what that means, but I think it just makes a tab in code world.
+
+If you want to concatenate strings, you the `+` operator. Like so:
+
+> `"Put this " + "together " + "with this."`
+
+And you can put computed code into a string by adding it inside ${}. Whatever is in those brackets will be computed rather than literal.
+
+> `"I told Jimmy the Rat to pay me ${5 * 100} samoleans, but he only paid me ${100 - 5} clams, so I have send Biggie Two Times to take care of the situation."`
+
+A string inside backticks is called a "template literal."
+
+### Unary Operators
+
+Unary operators are operators that only take one value. `+` and things like that are binary because they need two values to work (`2 + 2`). But something like `typeof` only takes one value.
+
+> `typeof x` → computes "string"
+> `typeof 4` → computes "number"
+
+The `-` operator is bothe unary and binary, because it can take two values (`2 -2`) or just one (`-8`).
+
+### Boolean Values
+
+A boolean is something that is yes or no, on or off. `true` or `false`.
+
+### Comparison Operators
+
+A comparison operator is something that gives you a boolean. The `+` operator can give you strings or integers, and that could be anything you imagine. But a comparison operator can only give you true or false.
+
+`>` and `<` are greater than and less than.
+
+> `3 < 2`
+
+Is three less than two? No, so this returns `false`.
+
+> `3 > 2`
+
+Is three greater than two? Yes, so this returns `true`.
+
+Strings can also be compared this way. 'Alpha' is greater than 'Zoolander'. Because a comes before z. But capital letters come after lowercase. So z is greater than A.
+
+Here are some of these other comparison operators.
+
+- `>=` - greater than or equal to
+- `<=` - less than or equal to
+- `==` - equals
+- `===` - equals exactly
+- `!=` - does not equal
+
+That last one use the `!` not operator. You can use the `!` to mean something is opposite. It flips the value.
+
+### Logical Operators
+
+There are three operators that can be applied to booleans: and, or, and not.
+
+- `&&` and
+- `||` or
+- `!` not
+
+Is `this` and `this` true? Then you get true. Is one of them false? Then you get false.
+
+Is `this` or `this` true? Then you get true. If both are false, you get false.
+
+The `!` is not. `!false` is `true`.
+
+### The Ternary (Conditional) Operator
+
+There is only one ternary operator, which is called the conditional operator. It takes three values. What a world!
+
+If the statement results in true, you get the left value. If it's false, you get the right. It looks like this.
+
+> `true ? 1 : 2`
+
+Since this is true, it will return `1`.
+
+Here's another example.
+
+> `'Nintendo was founded in 1885' ? 'hanafuda cards' : 'video games'`
+
+This wouldn't actually work, of course. But Nintendo was founded in 1885 (`true`), so the return here would be `'hanafuda cards'`. They made hanafuda cards for about 100 years before making video games.
+
+> `'SEGA was founded in Japan' ? 'video games' : 'pinball machines'`
+
+This is `false`. SEGA was founded in America and operated in Japan, servicing pinball machines. SEGA is an abbreviation of Service Games. So this would return `'pinball machines'`.
+
+### Empty Values
+
+There are two empty values.
+
+- `null`
+- `undefined`
+
+Use them interchangeably. They mean "no value."
+
+### Automatic Type Conversion
+
+Javascript is a wacky language. It will try to accept what you give it without throwing an error, even if the result is not what you were expecting. What a world!
+
+This is called "type coercion." It will try to figure out what you mean and give you something, if it can. Here are some examples from the book:
+
+> `8 * null`
+Returns `0`.
+Javascript interprets `null` as `0`, so you get `8 * 0`, which is `0`.
+
+> `"5" - 1`
+Returns `4`.
+The `"5"` string becomes `5` the integer.
+
+> `"5" + 1`
+Returns `51`.
+The `"5"` string plus the `+` operator means JS tries string concatenation. So the `1` integer becomes a string and you `"5" + "1"`, or `"51"`
+
+> `"five" * 2`
+Returns `NaN`.
+The string `"five"` is not a number and doesn't play well with `2` the integer. So you get `NaN`.
+
+> `false == 0`
+Returns `true`.
+`false` gets turned into `0`, so this true. `0` equals `0`.
+
+If you try to match `null` or `undefined` to something, it only returns `true` if it's == to `null` or `undefined`. Anything else, even `0`, will give you false.
+
+Use the three character operator `===` to see if something is truly equal, and avoid type coercion. The triple equals will only be true if the two values are exactly the same.
+
+### Short-circuiting Logical Operators
+
+When using the or `||` operator, it may fall back on a value if one is empty. We can use this to add a default value when we think something might be empty. Like:
+
+`if (user || guest)`
+`log in to website`
+
+If the `user` argument is empty because it wasn't defined (maybe they didn't make a user account), the code can run using the `guest` variable that we set up as a default. It's our fallback option.
+
+If the left side is null or undefined, the or operator will default to the right side.
+
+It is opposite for the and operator. If the left side is false, it returns the false side, not the true side.
+
+You can use this to your advantage to short circuit the operators. If you want something on the right side to be ignored, then make the left side true for or operators and left side false for and operators.
+
 
 ## Javi's Notes
 
