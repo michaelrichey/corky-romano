@@ -188,29 +188,33 @@ let makeChessboard = function (times) {
     let result = ''
     for(let counter = 1; counter <= times; counter++) {
         console.log('outer ' + counter)
-        result = result + makeLine()
+        result = result + makeLine(times)
     }
     console.log(result)
 }
 
-let makeLine = function () {
-    let combo1 = " #"
-    let combo2 = "# "
+let switchyCounter = 'a'
+
+let makeLine = function (times) {
     let final = ''
-    for(let counter = 1; counter <= 4; counter++) {
-        console.log('combo1 ' + counter)
-        final = final + combo1
-    }
-    final = final + '\n'
-    for(let counter = 1; counter <= 4; counter++) {
-        console.log('combo2 ' + counter)
-        final = final + combo2
+    if (switchyCounter === 'a') {
+        for(let counter = 1; counter <= (times/2); counter++) {
+            final = final + " #"
+        }
+        switchyCounter = 'b'
+    } else if (switchyCounter === 'b') {
+        for(let counter = 1; counter <= (times/2); counter++) {
+            final = final + "# "
+        }
+        switchyCounter = 'a'
+    } else {
+        console.log('you broke for real this time')
     }
     final = final + '\n'
     return final
 }
 
-makeChessboard(4)
+makeChessboard(10)
 
 
 </script>
