@@ -153,6 +153,63 @@ Which continues on this line.
 And this line.
 So many lines.*/`
 
+## Exercises - Michael
+
+<script>
+
+let makePyramid = function () {
+    let counter = 1
+    let symbol = "#"
+    while (counter <= 7) {
+        console.log(symbol)
+        symbol = symbol + "#"
+        counter = counter + 1
+    }
+}
+
+makePyramid()
+
+let fizzBuzzMaker = function () {
+    for(let counter = 0; counter <= 100; counter++)
+    if (counter % 3 == 0 && counter % 5 == 0) {
+        console.log('fizzbuzz')
+    } else if (counter % 3 == 0) {
+        console.log('fizz')
+    } else if (counter % 5 == 0) {
+        console.log('buzz')
+    } else {
+        console.log(counter)
+    }
+}
+
+fizzBuzzMaker()
+
+let makeChessboard = function () {
+    let combo1 = " #"
+    let combo2 = "# "
+    let final = ''
+    for(counter = 1; counter <= 4; counter++) {
+        final = final + combo1
+    }
+    for(counter = 1; counter <= 4; counter++) {
+        final = final + combo2
+    }
+    console.log(final)
+
+        
+
+
+}
+
+let makeLine = function () {
+
+}
+
+makeChessboard()
+
+
+</script>
+
 ## Javi's Notes
 
 asdf
