@@ -185,24 +185,30 @@ let fizzBuzzMaker = function () {
 fizzBuzzMaker()
 
 let makeChessboard = function () {
+    let result = ''
+    for(counter = 1; counter <= 4; counter++) { 
+        result = result + makeLine()
+        console.log('tets')
+    }
+
+    console.log(result)
+        
+
+}
+
+let makeLine = function () {
     let combo1 = " #"
     let combo2 = "# "
     let final = ''
     for(counter = 1; counter <= 4; counter++) {
         final = final + combo1
     }
+    final = final + '\n'
     for(counter = 1; counter <= 4; counter++) {
         final = final + combo2
     }
-    console.log(final)
-
-        
-
-
-}
-
-let makeLine = function () {
-
+    final = final + '\n'
+    return final
 }
 
 makeChessboard()
