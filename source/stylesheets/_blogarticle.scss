@@ -1,3 +1,10 @@
 .blog-layout__linebreak {
     width: 60vw;
 }
+
+blockquote {
+  width: 60%;
+  margin: 2rem 3rem;
+  border-left: 3px solid red;
+  padding: 0.15rem 0 .5rem 1rem;
+}

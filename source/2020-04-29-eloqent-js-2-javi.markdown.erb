@@ -1,0 +1,38 @@
+---
+title: "Eloquent Javascript Notes: Chapter 2"
+date: 2020-04-29
+layout: blog-layout
+category: javascript
+---
+
+>In some cases, JavaScript allows you to omit the semicolon at the end of a statement. In other cases, it has to be there, or the next line will be treated as part of the same statement. The rules for when it can be safely omitted are somewhat complex and error-prone. So in this book, every statement that needs a semicolon will always get one. I recommend you do the same, at least until you’ve learned more about the subtleties of missing semicolons.
+
+Really important! JavaScript does work without semicolons, and it can be controversial like tabs vs spaces in programming. Some devs prefer not to use semicolons and think it's tedious.
+I agree with the book, get into the habit of adding semicolons and set up linters that do it. Makes things more reliable and safe.
+
+
+# Returns vs Side Effects
+Another important concept.
+
+A return:
+```
+function multiply(a,b) {
+  return a * b;
+}
+const result = multiply(1,2);
+```
+
+A side effect:
+
+```
+const a = 1;
+const b = 2;
+let result;
+
+function multiply() {
+  result = a * b;
+}
+
+multiply();
+```
+
