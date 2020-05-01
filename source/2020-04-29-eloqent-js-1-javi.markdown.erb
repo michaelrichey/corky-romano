@@ -1,0 +1,72 @@
+---
+title: "Eloquent Javascript Notes: Chapter 1"
+date: 2020-04-29
+layout: blog-layout
+category: javascript
+---
+
+> Calculations with whole numbers (also called integers) smaller than the aforementioned 9 quadrillion are guaranteed to always be precise. Unfortunately, calculations with fractional numbers are generally not. Just as π (pi) cannot be precisely expressed by a finite number of decimal digits, many numbers lose some precision when only 64 bits are available to store them. This is a shame, but it causes practical problems only in specific situations. The important thing is to be aware of it and treat fractional digital numbers as approximations, not as precise values.
+[https://eloquentjavascript.net/01_values.html#p_8KgYC0F1fX](https://eloquentjavascript.net/01_values.html#p_8KgYC0F1fX)
+
+Is important to know, especially if you're working with money (ex. a checkout form or an ecommerce site).
+The inner workings of why this is an issue is a rabbit hole that could be interesting to explore later.
+
+But for practical purposes, there are libraries like [https://github.com/nefe/number-precision](https://github.com/nefe/number-precision) that handle this.
+And also, always make sure to test your code.
+
+> There is one more arithmetic operator, which you might not immediately recognize. The % symbol is used to represent the remainder operation. X % Y is the remainder of dividing X by Y. For example, 314 % 100 produces 14, and 144 % 12 gives 0. The remainder operator’s precedence is the same as that of multiplication and division. You’ll also often see this operator referred to as modulo.
+[https://eloquentjavascript.net/01_values.html#p_3aZxtaabKD](https://eloquentjavascript.net/01_values.html#p_3aZxtaabKD)
+
+Module is used often enough that you should be familiar with it.
+
+> There are three special values in JavaScript that are considered numbers but don’t behave like normal numbers.
+
+[https://eloquentjavascript.net/01_values.html#i_R4eFf8w7Yz](https://eloquentjavascript.net/01_values.html#i_R4eFf8w7Yz)
+
+
+
+Also good to know as edge cases in your code, and one of the things that comes up when things go wrong in your code along with returning _null_, _undefined_.
+
+
+
+The section on strings is important because we work with strings lots of times in HTML and React: [https://eloquentjavascript.net/01_values.html#h_OBbEvqxHHH](https://eloquentjavascript.net/01_values.html#h_OBbEvqxHHH)
+
+A lot of times bugs in your app are due to considerations for things like invisible characters like newlines and tabs.
+
+This also comes into play when dealing with user input. For instance a user could paste a value and accidentally paste invisibles that break our code.
+
+
+# Unary operators
+
+`typeof` is used a lot when validating inputs. When your function is being extra cautious you'll see things like
+
+```javascript
+function multiply(a, b) {  
+  if (typeof a !== 'number' || typeof b !== 'number') {  
+    throw Error("a or b is not a number");
+  }
+}
+```
+
+You might not expect this way of sorting [https://eloquentjavascript.net/01_values.html#p_NxTGvCsM4s](https://eloquentjavascript.net/01_values.html#p_NxTGvCsM4s) but it works
+
+Ternaries are used a lot in React [https://eloquentjavascript.net/01_values.html#i_pdqDW7Pebo](https://eloquentjavascript.net/01_values.html#i_pdqDW7Pebo ) to decide what to render.
+
+Null vs undefined: [https://eloquentjavascript.net/01_values.html#h_FewqJ8K2E+](https://eloquentjavascript.net/01_values.html#h_FewqJ8K2E+) something I have wondered a lot about recently. Good to know that it doesn't seem to matter.
+
+[https://eloquentjavascript.net/01_values.html#h_AY+YGu6qyM](https://eloquentjavascript.net/01_values.html#h_AY+YGu6qyM) the important thing to take away from this is: be careful about comparisons, and always use the strict comparisons `===` and not `==`
+
+
+
+[https://eloquentjavascript.net/01_values.html#h_AY+YGu6qyM](https://eloquentjavascript.net/01_values.html#h_AY+YGu6qyM) this is what's happening in React
+
+
+`{ shouldShowComponent && <Component/>}`
+
+
+is used  to return Component if the left value is true
+
+it is also used in some cases to provide fallback values like
+
+`const preferredTopping = userSelectedTopping || "pepperoni" //if user has not made a choice use pepperoni`
+
