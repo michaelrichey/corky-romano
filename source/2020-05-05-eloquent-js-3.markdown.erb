@@ -93,3 +93,50 @@ On the balance between efficiency and human-friendliness.
 **The whole section on closure**
 
 Not clear what closure is or how it works. Had to read section several times.
+
+<script>
+
+//exercise 1: minimum
+let min = function (n1, n2) {
+    if (n1 < n2) {
+        return n1
+    } else {
+        return n2
+    }
+}
+
+console.log(min(0, 10));
+// → 0
+console.log(min(0, -10));
+// → -10
+
+// exercise 3: bean counting
+
+let countBs = function (string) {
+    array = string.split("")
+    counter = 0
+    array.forEach(function (item) {
+        if (item === "B") {
+            counter ++
+        }
+    })
+    return counter
+}
+
+let countChar = function (string, char) {
+    array = string.split("")
+    counter = 0
+    array.forEach(function (item) {
+        if (item === char) {
+            counter ++
+        }
+    })
+    return counter
+}
+
+console.log(countBs("BBC"));
+// → 2
+console.log(countChar("kakkerlak", "k"));
+// → 4
+
+</script>
