@@ -1,10 +1,8 @@
 ---
 title: "Eloquent Javascript Notes: Chapter 3"
-
-date: 2020-01-01
+date: 2020-05-05
 layout: blog-layout
 category: javascript
-published: false
 ---
 
 Welcome to the notes for [Functions](https://eloquentjavascript.net/03_functions.html). This is an important chapter. Let's read together. Shall we? Yes, we shall.
@@ -25,7 +23,7 @@ _Lexical Scoping_ https://en.wikipedia.org/wiki/Scope_(computer_science)#Lexical
 
 ### Sections That Were Written Well
 
-## Scope
+**Scope**
 
 Scope is an important concept to be comfortable with as a lot of bugs in JavaScript relate to scope.
 
@@ -42,7 +40,8 @@ Things that help with managing scope are:
 
 This is a very common technique in JavaScript. I don't think we saw it in Ruby, but in JS functions are often treated like other variables: passed around and manipulated.
 
-## Closures
+**Closures**
+
 > Thinking about programs like this takes some practice. A good mental  model is to think of function values as containing both the code in  their body and the environment in which they are created. When called,  the function body sees the environment in which it was created, not the  environment in which it is called.
 
 This is really important and an extension built on how scope behaves. You'll see this pattern a lot in modules.
@@ -115,7 +114,7 @@ Good way of putting it. I hadn't thought of a programming language as "not havin
 
 **Pure Functions**
 
-A pure function has the pleasant property that, when called with the same arguments, it always produces the same value (and doesn’t do anything else).
+> A pure function has the pleasant property that, when called with the same arguments, it always produces the same value (and doesn’t do anything else).
 
 Good to know.
 
