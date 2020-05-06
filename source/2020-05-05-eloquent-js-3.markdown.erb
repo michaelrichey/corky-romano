@@ -1,12 +1,51 @@
 ---
 title: "Eloquent Javascript Notes: Chapter 3"
-date: 2020-05-05
+
+date: 2020-01-01
 layout: blog-layout
 category: javascript
-published: true
+published: false
 ---
 
 Welcome to the notes for [Functions](https://eloquentjavascript.net/03_functions.html). This is an important chapter. Let's read together. Shall we? Yes, we shall.
+
+## Javi's Notes
+
+
+### Concepts I Don't Understand
+
+_Lexical Scoping_ was a bit hard to understand at first read.
+I re-read it a couple of times, and I think the explanation of functions always looking 'outward' helps.
+Imagine a concentric ring of circles.
+
+### New Vocabulary
+
+_Lexical Scoping_ https://en.wikipedia.org/wiki/Scope_(computer_science)#Lexical_scoping
+
+
+### Sections That Were Written Well
+
+## Scope
+
+Scope is an important concept to be comfortable with as a lot of bugs in JavaScript relate to scope.
+
+Things that help with managing scope are:
+
+- naming variables well so that you're not confused what scope they are in (linters can help with this)
+
+- avoiding global scope (it's harder to keep track of something far away from your function)
+
+  > The set of bindings visible inside a block is determined by the place of that block in the program text. Each local scope can also see all the  local scopes that contain it, and all scopes can see the global scope.  This approach to binding visibility is called *lexical scoping*.
+
+  
+## Functions as values
+
+This is a very common technique in JavaScript. I don't think we saw it in Ruby, but in JS functions are often treated like other variables: passed around and manipulated.
+
+## Closures
+> Thinking about programs like this takes some practice. A good mental  model is to think of function values as containing both the code in  their body and the environment in which they are created. When called,  the function body sees the environment in which it was created, not the  environment in which it is called.
+
+This is really important and an extension built on how scope behaves. You'll see this pattern a lot in modules.
 
 ## Michael's Notes
 
