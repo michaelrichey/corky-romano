@@ -1,0 +1,142 @@
+---
+title: "Eloquent Javascript Notes: Chapter 3"
+date: 2020-05-05
+layout: blog-layout
+category: javascript
+published: true
+---
+
+Welcome to the notes for [Functions](https://eloquentjavascript.net/03_functions.html). This is an important chapter. Let's read together. Shall we? Yes, we shall.
+
+## Michael's Notes
+
+Here are Michael's notes.
+
+### New Concepts
+
+> Each scope can “look out” into the scope around it, so x is visible inside the block in the example. The exception is when multiple bindings have the same name—in that case, code can see only the innermost one. For example, when the code inside the halve function refers to n, it is seeing its own n, not the global n.
+
+I get this. But does this mean you should have unique names for arguments you pass in to a function, when the same data is being passed through multiple functions? Or is it okay to use `n` over and over, because it's the same data moving through?
+
+**Optional Arguments**
+
+You can set the value of an argument with `=` in case no one passes an arguemnt like:
+
+let makeMotorcycle = function (wheels = 2) {
+    wheels + theRest
+}
+
+That's a bad example, but you can set the argument value. 
+
+Also, JS is not picky about missing arguments like Ruby is.
+
+**Growing Functions**
+
+Make sure each function does only one thing so it's reusable. This seems difficult to me, because you have to break down the functions into smaller and smaller functions. It seems easier to write one or two functions that do what you want. That's less to wrap your head around. But I see how it wouldn't be reusable, so you'd be rewriting code all the time.
+
+### New Vocabulary
+
+**lexical scoping**
+
+A scopes can see scopes that surround them. All scopes can see global scope.
+
+**Function Declaration**
+
+Shorter notation to make a function. The only practical difference is it is not part of the top-to-bottom order or JS. Meaning, you can call it before it is declared, and it will still work. Looks like this:
+
+```
+function square(x) {
+  return x * x;
+}
+```
+
+**Function expressions**
+
+Regular type functions.
+
+**Arrow Functions**
+
+The one with arrows.
+
+**The Call Stack**
+
+The stack that remembers what line (or place) you are in the code execution when a function is called. When JS runs, it runs top to bottom. Line 16, 17, 18, 19. Then a function is called. The Call Stack remembers line 19. The code jumps to Line 2 where the function lives, runs through the function. Then the Call Stack is used to remember where it was before it got sidetracked. Back to line 19. Almost like a bookmark.
+
+**Closure**
+
+The idea that a when a function is called, it's returning the entire environment, with all the parameters and calculations therein. If you store a function with certain parameters in variable `x`, that variable is storing the entire environment, not just the return.
+
+### Sections That Were Written Well
+
+> Typical adult English speakers have some 20,000 words in their vocabulary. Few programming languages come with 20,000 commands built in. And the vocabulary that is available tends to be more precisely defined, and thus less flexible, than in human language. Therefore, we usually have to introduce new concepts to avoid repeating ourselves too much.
+
+Good way of putting it. I hadn't thought of a programming language as "not having that many words." The idea that you only have a handful of words, and you have to use them to combine and create new "words" or concepts makes sense. I hadn't thought of it in those terms before.
+
+> Running through a simple loop is generally cheaper than calling a function multiple times.
+
+**Pure Functions**
+
+A pure function has the pleasant property that, when called with the same arguments, it always produces the same value (and doesn’t do anything else).
+
+Good to know.
+
+> In the case of the power function, the inelegant (looping) version is still fairly simple and easy to read. It doesn’t make much sense to replace it with the recursive version. Often, though, a program deals with such complex concepts that giving up some efficiency in order to make the program more straightforward is helpful.
+>
+> Worrying about efficiency can be a distraction. It’s yet another factor that complicates program design, and when you’re doing something that’s already difficult, that extra thing to worry about can be paralyzing.
+> 
+> Therefore, always start by writing something that’s correct and easy to understand. If you’re worried that it’s too slow—which it usually isn’t since most code simply isn’t executed often enough to take any significant amount of time—you can measure afterward and improve it if necessary.
+
+On the balance between efficiency and human-friendliness.
+
+### Sections That Were Written Not So Well
+
+**The whole section on closure**
+
+Not clear what closure is or how it works. Had to read section several times.
+
+<script>
+
+//exercise 1: minimum
+let min = function (n1, n2) {
+    if (n1 < n2) {
+        return n1
+    } else {
+        return n2
+    }
+}
+
+console.log(min(0, 10));
+// → 0
+console.log(min(0, -10));
+// → -10
+
+// exercise 3: bean counting
+
+let countBs = function (string) {
+    array = string.split("")
+    counter = 0
+    array.forEach(function (item) {
+        if (item === "B") {
+            counter ++
+        }
+    })
+    return counter
+}
+
+let countChar = function (string, char) {
+    array = string.split("")
+    counter = 0
+    array.forEach(function (item) {
+        if (item === char) {
+            counter ++
+        }
+    })
+    return counter
+}
+
+console.log(countBs("BBC"));
+// → 2
+console.log(countChar("kakkerlak", "k"));
+// → 4
+
+</script>
