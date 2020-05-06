@@ -9,7 +9,6 @@ Welcome to the notes for [Functions](https://eloquentjavascript.net/03_functions
 
 ## Javi's Notes
 
-
 ### Concepts I Don't Understand
 
 _Lexical Scoping_ was a bit hard to understand at first read.
@@ -35,7 +34,6 @@ Things that help with managing scope are:
 
   > The set of bindings visible inside a block is determined by the place of that block in the program text. Each local scope can also see all the  local scopes that contain it, and all scopes can see the global scope.  This approach to binding visibility is called *lexical scoping*.
 
-  
 ## Functions as values
 
 This is a very common technique in JavaScript. I don't think we saw it in Ruby, but in JS functions are often treated like other variables: passed around and manipulated.
@@ -72,11 +70,23 @@ Also, JS is not picky about missing arguments like Ruby is.
 
 Make sure each function does only one thing so it's reusable. This seems difficult to me, because you have to break down the functions into smaller and smaller functions. It seems easier to write one or two functions that do what you want. That's less to wrap your head around. But I see how it wouldn't be reusable, so you'd be rewriting code all the time.
 
+* **Amendment 5/6**
+
+  * Functions should be written organically, and through the process of rewriting and code reviews, you should find ways to simplify the code so every function does one thing. If one "super function" contains all the code to get something done, removing one piece will make the whole thing fall apart, but if it's broken into smaller functions, you can more easily make changes and move things.
+
+  * The responsibility of the programmar is to 1.) write the function and make sure it works. Then 2.) refactor so every function does one thing.
+
+  * When it comes to how much we need to "break down" a function, this is where code review and talking with other programmers helps. If you have a function that outputs an <li> wrapped wored in html, is that good enough, or should you have an argument that will determine the html tag which wraps the content? Will anyone use this again? Does this code exist somewhere else?
+
 ### New Vocabulary
 
 **lexical scoping**
 
 A scopes can see scopes that surround them. All scopes can see global scope.
+
+* **Amendment 5/6**
+
+  * Think of it like concentric circles. Every level can see the level before it, all the way back to global. So in a 10-level circle-nest, level 6 can see 5, 4, 3, 2, 1, and global.
 
 **Function Declaration**
 
@@ -96,13 +106,64 @@ Regular type functions.
 
 The one with arrows.
 
+* **Amendment 5/6**
+
+  * Arrow functions are an important part of ES6 that Michael should try to use more so he can learn to read them better. At the beginning of ES6, they were like a kickflip in Javascript, a way to skate in and show everyone you are a cool pro. Now they are used for conciseness. And as more people get used to them, they may become a new standard. If you use them a lot, they become easier to read.
+
 **The Call Stack**
 
 The stack that remembers what line (or place) you are in the code execution when a function is called. When JS runs, it runs top to bottom. Line 16, 17, 18, 19. Then a function is called. The Call Stack remembers line 19. The code jumps to Line 2 where the function lives, runs through the function. Then the Call Stack is used to remember where it was before it got sidetracked. Back to line 19. Almost like a bookmark.
 
+* **Amendment 5/6**
+
+  * The call stack does remember where a program left off when a function is called, but it's more than that. It's a stack of functions that need to be resolved in order to continue. If a function looks like this:
+
+```
+let rideMotocycle = function () {
+    getKeys()
+    fillUpGasTank()
+    sitOnMotorCycle()
+    startEngine()
+    rideBackToArizona()
+}
+```
+
+```
+let getKeys = function () {
+    lookUnderCouchCushions()
+}
+```
+
+```
+let fillUpGasTank = function () {
+    getGasCan()
+    putGasinCan()
+    putGasFromCanInGashole()
+}
+```
+
+  * Then your call stack adds a function to the stack every time it needs to go to a new function. It can't resolve that function until the other functions run.
+
+  * rideMotocycle
+    * getKeys
+      * lookUnderCouchCushions 
+    * fillUpGasTank 
+      * getGasCan
+      * putGasinCan
+      * putGasFromCanInGashole
+    * sitOnMotorCycle
+    * startEngine
+    * rideBackToArizona
+
+  * So the stack is only ever three deep.
+
 **Closure**
 
 The idea that a when a function is called, it's returning the entire environment, with all the parameters and calculations therein. If you store a function with certain parameters in variable `x`, that variable is storing the entire environment, not just the return.
+
+* **Amendment 5/6**
+
+  * When you call a function, you're calling the entire machine, including the arguments passed in, all the computed pieces, and the return. When you learn to use the closure, it can hide the computational parts and only reveal the returns or the results you want shown. It's like private in Ruby, but Javascript doesn't have that.
 
 ### Sections That Were Written Well
 
@@ -125,6 +186,12 @@ Good to know.
 > Therefore, always start by writing something that’s correct and easy to understand. If you’re worried that it’s too slow—which it usually isn’t since most code simply isn’t executed often enough to take any significant amount of time—you can measure afterward and improve it if necessary.
 
 On the balance between efficiency and human-friendliness.
+
+* **Amendment 5/6**
+
+  * A pure function is one that does not affect anything outside of it. It's used, it returns a value, and it doesn't have side effects, or it's not used for it's side effects. You may be able to turn off your light by stomping on a basketball, but it would be better to have a light switch, something that is directly affecting the light and designed to turn off the light.
+
+  * Pure functions don't affect global variables. 
 
 ### Sections That Were Written Not So Well
 
