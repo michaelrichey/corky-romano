@@ -185,12 +185,51 @@ console.log(sum(range(1, 10)));
 // → 55
 
 // bonus
- console.log(range(5, 2, -1));
+console.log(range(5, 2, -1));
 // → [5, 4, 3, 2]
 
 console.log(range(1, 10, 2));
 console.log(range(1, 20, 3));
 console.log(range(20, 5, 3));
 console.log(range(20, 5, -3));
+
+// Reversing an array
+
+let reverseArray = function (array) {
+    newarr = []
+    for (const element of array) {
+        newarr.unshift(element)
+    }
+    return newarr
+}
+
+let reverseArrayInPlace = function (array) {
+    newarr = []
+    for (const element of array) {
+        newarr.unshift(element)
+    }
+    index = 0
+    newarr.forEach(function (e) {
+        array[index] = e
+        index++
+    })
+}
+
+superarray = [1, 2, 3, 4, 5]
+
+reverseArrayInPlace(superarray)
+console.log('your test, master: ' + superarray)
+
+
+
+console.log(reverseArray(["A", "B", "C"]));
+// → ["C", "B", "A"];
+console.log(reverseArray(["apple", "banana", "carrot", "donkey", "edmund"]));
+ let arrayValue = [1, 2, 3, 4, 5];
+ reverseArrayInPlace(arrayValue);
+ console.log('final: '+ arrayValue);
+// → [5, 4, 3, 2, 1]
+
+
 
 </script>
