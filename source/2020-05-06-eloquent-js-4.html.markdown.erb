@@ -35,21 +35,19 @@ Properties that contain functions.
 
 The `in` keyword can be used to tell you if a property existsin within a certain object.
 
-**Arrays**
-
-Arrays are a type of object.
-
 **`of` keyword**
 
-You can use the `of` keyword in a for loop to loop over elements of the value given after of (I don't know what this means). Like this:
+A `for...of` loop is shorthand for the common for loop that requires you to set a counter. This is a simplification:
 
-```
-for (let entry of JOURNAL) {
-  console.log(`${entry.events.length} events.`);
+````
+array1 = [a, b, c]
+
+for (const element of array1) {
+  console.log(element);
 }
 ```
 
-Google about this later. Seems important and useful.
+From this, you'll get a, b, and c logged to the console individually. It's like a forEach or an .each method in ruby. You add the array you want to iterate over after the keyword `of`. Then you give a name to the items in the array so you can use it in the code block. In this one, we used element.
 
 **`shift` and `unshift` methods**
 
@@ -89,36 +87,62 @@ You can use three dots before an argument name (`...numbers`), which will take a
 
 **The Math Object**
 
-You can use this object to calculate all kinds of numbers, and it has built in methods to do so.
+The `Math` object has its own methods. And you can use these methods to pass arguments, and it will perform various math functions on the number you passed in. You should pass in numbers, by the way.
+
+`Math.random()` - give a random number, between 0 and 1
+`Math.round()` - round the number up
+`Math.ceil()` - round number up
+`Math.floor()` - round number down
+`Math.pow()` - get power of. Pass in number you want to get power of, and also to the power of what number
+`Math.sqrt()` - get the square root of a number
 
 **Destructuring**
 
-research more
+In a normal variable assignment, you use the `=` operator to assign a value to binding. You can even assign a whole array to it.
+
+But in destructuring, the left side of the variable assignment is an array. Each item in the array, takes on an assignment equal to the array on the left.
+
+This is a way to batch-assign arrays.
+
+Or it can be another variable on the right side, and the array will each through and assign itself whatever it can find in the variable.
+
+Seems kind of messy to me. Is this a good way to assign variables?
+
+Learned about this from MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
 
 **JSON*
 
 Javascript Object Notation. This is data store in objects, which is stored in a JSON file. You can use this to send your data to other places, or use it easily. Like a data file in yaml (I think).
 
-
-### Sections That Were Written Well
-
-**Item**
-
-asdf
-
-**Item**
-
-asdf
-
 ### Sections That Were Written Not So Well
 
-**Item**
+**Array loops section**
 
+> There is a simpler way to write such loops in modern JavaScript.
+
+> for (let entry of JOURNAL) {
+>   console.log(`${entry.events.length} events.`);
+> }
+
+> When a for loop looks like this, with the word of after a variable definition, it will loop over the elements of the value given after of. This works not only for arrays but also for strings and some other data structures. We’ll discuss how it works in Chapter 6.
 asdf
 
-**Item**
+This whole section reads poorly: "it will loop over the elements of the value given after of." Not well communicated. And the example given does nothing to clear it up.
 
-asdf
+Compare to example on MDN: 
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of
+
+Within five minutes I knew how this loop worked.
+
+**Everything about the weresquirrel**
+
+It was a good idea to get a story mixed in to make a concept more sticky. But that good decision was squandered by the overcomplicated math. We're dealing with dense concepts already, so a story can help those dense cocepts stick. But the javascript example embedded in the story indid the good work of the story itself.
+
+In general, the javascript exeamples in the book are a hair too complex. Unlike MDN that uses overly simple examples to illustrate a new concept, it seems the book expects you to already know JS, because it's going to explain the concepts to you in ways that might bend your mind a little further. It's extra distraction in a space where you're trying to concentrate.
+
+**Destructuring**
+
+Not clear what the concept is. I had to learn about it from MDN. To be fair, it's not entirely clear after reading MDN, so it's a tough concept, but the book could have used better examples.
 
 ## Ranodm questions
 
