@@ -152,12 +152,22 @@ Not clear what the concept is. I had to learn about it from MDN. To be fair, it'
 
 // The sum of a range
 
-let range = function (start, end) {
+let range = function (start, end, step=1) {
     arr = []
-    while (start <= end) {
-        arr.push(start)
-        start++
+    if (start > end && Math.sign(step) == -1) {
+        while (start >= end) {
+            arr.push(start)
+            start = start + step
+        }
+    } else if (start < end && Math.sign(step) == 1) {
+        while (start <= end) {
+            arr.push(start)
+            start = start + step
+            }
+    } else {
+        console.log('it broke')
     }
+
     return arr
 }
 
@@ -175,7 +185,12 @@ console.log(sum(range(1, 10)));
 // → 55
 
 // bonus
-// console.log(range(5, 2, -1));
+ console.log(range(5, 2, -1));
 // → [5, 4, 3, 2]
+
+console.log(range(1, 10, 2));
+console.log(range(1, 20, 3));
+console.log(range(20, 5, 3));
+console.log(range(20, 5, -3));
 
 </script>
