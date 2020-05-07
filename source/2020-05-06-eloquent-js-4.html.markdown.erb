@@ -144,6 +144,38 @@ In general, the javascript exeamples in the book are a hair too complex. Unlike 
 
 Not clear what the concept is. I had to learn about it from MDN. To be fair, it's not entirely clear after reading MDN, so it's a tough concept, but the book could have used better examples.
 
-## Ranodm questions
+## Random questions
 
 - Should I refresh calculus, algebra, or other math concepts?
+
+<script>
+
+// The sum of a range
+
+let range = function (start, end) {
+    arr = []
+    while (start <= end) {
+        arr.push(start)
+        start++
+    }
+    return arr
+}
+
+let sum = function (array) {
+    result = null
+    for (const element of array) {
+        result = result + element
+    }
+    return result
+}
+
+console.log(range(1, 10));
+// → [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+console.log(sum(range(1, 10)));
+// → 55
+
+// bonus
+// console.log(range(5, 2, -1));
+// → [5, 4, 3, 2]
+
+</script>
