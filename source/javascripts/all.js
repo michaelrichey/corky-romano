@@ -18,6 +18,7 @@ let questioninfo = [
     questionid: '#question1',
     answerid: "#answer1",
     message: "#message1",
+    buttonid: "#button1",
     question: "What is the first temple you have to beat as Adult Link in The Legend of Zelda: Ocarina of Time?",
     answer: "forest temple",
     number: "1"
@@ -26,6 +27,7 @@ let questioninfo = [
     questionid: '#question2',
     answerid: "#answer2",
     message: "#message2",
+    buttonid: "#button2",
     question: "Which member of musical duo They Might Be Giants plays guitar?",
     answer: "john flansburgh",
     number: "2"
@@ -34,6 +36,7 @@ let questioninfo = [
     questionid: '#question3',
     answerid: "#answer3",
     message: "#message3",
+    buttonid: "#button3",
     question: "What cereal company is best known for licensed character cereals like Batman, Ghostbusters, Barbie, Cabbage Patch Kids, WWF, and Nintendo (and they were also a subsidiary of pet food company Purina)?",
     answer: "ralston",
     number: "3"
@@ -42,6 +45,7 @@ let questioninfo = [
     questionid: '#question4',
     answerid: "#answer4",
     message: "#message4",
+    buttonid: "#button4",
     question: "What Microsoft console is sometimes affectionately called 'The Dreamcast 2' because of its large number of Sega exclusives that were originally meant for the Dreamcast?",
     answer: "xbox",
     number: "4"
@@ -50,6 +54,7 @@ let questioninfo = [
     questionid: '#question5',
     answerid: "#answer5",
     message: "#message5",
+    buttonid: "#button5",
     question: "What Teddy Grahams spin-off cookie was superior to Dunkaroos, but is not getting a revival is 2020 for God knows what reason?",
     answer: "dizzy grizzlies",
     number: "5"
@@ -79,9 +84,11 @@ questioninfo.forEach(function (item) {
       console.log('correct!')
       makeMessage.textContent = 'You got it right!'
       document.querySelector(item.message).appendChild(makeMessage)
+
+      document.querySelector(item.buttonid).disabled = true
     } else {
       console.log('incorrect!')
-      makeMessage.textContent = 'You got it WRONG!!'
+      makeMessage.textContent = 'You got it wrong. Try again.'
       document.querySelector(item.message).appendChild(makeMessage)
     }
   })
