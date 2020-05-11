@@ -39,14 +39,22 @@ let questioninfo = [
 ]
 
 questioninfo.forEach(function (item) {
-  document.querySelector(item.id).addEventListener('submit', function (e) {
-    e.preventDefault()
-    console.log(e.target.elements[0].value)
-    answers.push(e.target.elements[0].value)
+  // const formElement = $(item.id);
+  // formElement.on('submit', function (e) {
+  //   e.preventDefault()
+  //   console.log(e.target.elements[0].value)
+  //   answers.push(e.target.elements[0].value)
 
-    let answer1 = document.createElement('p')
-    answer1.textContent = `Answer to question ${item.number}: ${e.target.elements[0].value}`
-    document.querySelector("#answers").appendChild(answer1)
-  })
+  //   let answer1 = document.createElement('p')
+  //   answer1.textContent = `Answer to question ${item.number}: ${e.target.elements[0].value}`
+  //   document.querySelector("#answers").appendChild(answer1)
+  // })
+  $(item.id).on('submit', (e) => e.preventDefault());
+  $(`${item.id} input[type="submit"]`)
+    .click((e) => {
+      $(e.target).toggleClass('btn-submitted');
+      $('<div>You did it</div>').addClass('foo').insertAfter($(e.target));
+    })
 
 })
+

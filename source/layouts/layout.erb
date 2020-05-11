@@ -8,9 +8,16 @@
 
     <!-- Use title if it's in the page YAML frontmatter -->
     <title><%= current_page.data.title || "Corky Romano" %></title>
+    <!-- add jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $('document').ready(function() {
+        console.log('this is ready', document.getElementById('main-title'));
+      });
+    </script>
+
 
     <%= stylesheet_link_tag "master" %>
-    
   </head>
 
   <body class="<%= page_classes %>">
