@@ -11,29 +11,40 @@ document.querySelector("#menu").addEventListener("click", function (e) {
 
 // for quiz
 
-let answers = [
+let answers = []
+
+let questioninfo = [
   {
-    a1: "asdf",
-    a2: "asdf",
-    a3: "asdf",
-    a4: "asdf",
-    a5: "asdf",
+    id: "#quiz1",
+    number: "1"
+  },
+  {
+    id: "#quiz2",
+    number: "2"
+  },
+  {
+    id: "#quiz3",
+    number: "3"
+  },
+  {
+    id: "#quiz4",
+    number: "4"
+  },
+  {
+    id: "#quiz5",
+    number: "5"
   }
 ]
 
-document.querySelector('#quiz').addEventListener('submit', function (e) {
-  e.preventDefault()
-  console.log(e.target.elements[0].value)
-  answers[0].a1 = e.target.elements[0].value
+questioninfo.forEach(function (item) {
+  document.querySelector(item.id).addEventListener('submit', function (e) {
+    e.preventDefault()
+    console.log(e.target.elements[0].value)
+    answers.push(e.target.elements[0].value)
 
-  console.log('this is ' + answers[0].a1)
-
-
-})
-/*
-document.querySelector('#quizbutton').addEventListener('click', function (e) {
-  e.preventDefault()
-  console.log(e)
+    let answer1 = document.createElement('p')
+    answer1.textContent = `Answer to question ${item.number}: ${e.target.elements[0].value}`
+    document.querySelector("#answers").appendChild(answer1)
+  })
 
 })
-*/
