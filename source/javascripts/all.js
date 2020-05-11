@@ -20,6 +20,8 @@ let questioninfo = [
   },
   {
     id: "#quiz2",
+    question: "What is your favorite food?",
+    answer: "mcdonalds",
     number: "2"
   },
   {
