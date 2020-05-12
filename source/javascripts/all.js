@@ -61,7 +61,7 @@ let questioninfo = [
   }
 ]
 
-questioninfo.forEach(function (item) {
+$.each(questioninfo, function (index, item) {
 
   $(item.questionid).append(`<p>${item.question}</p>`)
 
