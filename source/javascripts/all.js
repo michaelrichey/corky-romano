@@ -61,7 +61,17 @@ let questioninfo = [
   }
 ]
 
-$.each(questioninfo, function (index, { questionid, answerid, message, buttonid, question, answer, number }) {
+$.each(questioninfo, function (index, item) {
+
+  let {
+    questionid,
+    answerid,
+    message,
+    buttonid,
+    question,
+    answer,
+    number
+  } = item
 
   $(questionid).append(`<p>${question}</p>`)
 
