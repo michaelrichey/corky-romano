@@ -63,14 +63,12 @@ let questioninfo = [
 
 questioninfo.forEach(function (item) {
 
-  let question = `<p>${item.question}</p>`
-  $(item.questionid).append(question)
+  $(item.questionid).append(`<p>${item.question}</p>`)
 
   $(item.answerid).on('submit', function (e) {
     e.preventDefault()
     let typedAnswer = e.target.elements[0].value
-    let answer1 = `<p>Answer to question ${item.number}: ${typedAnswer}</p>`
-    $('#answers').append(answer1)
+    $('#answers').append(`<p>Answer to question ${item.number}: ${typedAnswer}</p>`)
 
     if (typedAnswer.toLowerCase() == item.answer.toLowerCase()) {
       answers.push(typedAnswer)
@@ -79,10 +77,8 @@ questioninfo.forEach(function (item) {
       document.querySelector(item.buttonid).disabled = true
     } else {
       $(item.message).append(`<p>You got it wrong. Try again.</p>`)
-
     }
   })
-
 })
 
 /*
