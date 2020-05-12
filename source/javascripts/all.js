@@ -62,34 +62,24 @@ let questioninfo = [
 ]
 
 questioninfo.forEach(function (item) {
-  let question = document.createElement('p')
-  question.textContent = item.question
-  document.querySelector(item.questionid).appendChild(question)
 
+  let question = `<p>${item.question}</p>`
+  $(item.questionid).append(question)
 
-  document.querySelector(item.answerid).addEventListener('submit', function (e) {
+  $(item.answerid).on('submit', function (e) {
     e.preventDefault()
-    typedAnswer = e.target.elements[0].value
-    console.log(typedAnswer)
-
-    let answer1 = document.createElement('p')
-    answer1.textContent = `Answer to question ${item.number}: ${e.target.elements[0].value}`
-    document.querySelector("#answers").appendChild(answer1)
-
-
-    let makeMessage = document.createElement('p')
+    let typedAnswer = e.target.elements[0].value
+    let answer1 = `<p>Answer to question ${item.number}: ${typedAnswer}</p>`
+    $('#answers').append(answer1)
 
     if (typedAnswer.toLowerCase() == item.answer.toLowerCase()) {
       answers.push(typedAnswer)
-      console.log('correct!')
-      makeMessage.textContent = 'You got it right!'
-      document.querySelector(item.message).appendChild(makeMessage)
+      $(item.message).append(`<p>You got it right!</p>`)
 
       document.querySelector(item.buttonid).disabled = true
     } else {
-      console.log('incorrect!')
-      makeMessage.textContent = 'You got it wrong. Try again.'
-      document.querySelector(item.message).appendChild(makeMessage)
+      $(item.message).append(`<p>You got it wrong. Try again.</p>`)
+
     }
   })
 
