@@ -63,20 +63,30 @@ let questioninfo = [
 
 $.each(questioninfo, function (index, item) {
 
-  $(item.questionid).append(`<p>${item.question}</p>`)
+  let {
+    questionid,
+    answerid,
+    message,
+    buttonid,
+    question,
+    answer,
+    number
+  } = item
 
-  $(item.answerid).on('submit', function (e) {
+  $(questionid).append(`<p>${question}</p>`)
+
+  $(answerid).on('submit', function (e) {
     e.preventDefault()
     let typedAnswer = e.target.elements[0].value
-    $('#answers').append(`<p>Answer to question ${item.number}: ${typedAnswer}</p>`)
+    $('#answers').append(`<p>Answer to question ${number}: ${typedAnswer}</p>`)
 
-    if (typedAnswer.toLowerCase() == item.answer.toLowerCase()) {
+    if (typedAnswer.toLowerCase() == answer.toLowerCase()) {
       answers.push(typedAnswer)
-      $(item.message).append(`<p>You got it right!</p>`)
+      $(message).append(`<p>You got it right!</p>`)
 
-      document.querySelector(item.buttonid).disabled = true
+      document.querySelector(buttonid).disabled = true
     } else {
-      $(item.message).append(`<p>You got it wrong. Try again.</p>`)
+      $(message).append(`<p>You got it wrong. Try again.</p>`)
     }
   })
 })
