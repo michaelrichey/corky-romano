@@ -54,7 +54,25 @@ function createQuestion(question, number, hint) {
     </div>`;
 }
 
-$.each(questioninfo, function (index, item) {
+function answerHandler(number, answer, e) {
+  e.preventDefault();
+  const form = $(e.target);
+  const button = form.find('input[type="submit"]');
+  const message = form.parent().find('.message');
+  let typedAnswer = e.target.elements[0].value;
+  $('#answers').append(`<p>Answer to question ${number}: ${typedAnswer}</p>`);
+
+  if (typedAnswer.toLowerCase() == answer.toLowerCase()) {
+    answers.push(typedAnswer);
+    message.append(`<p>You got it right!</p>`);
+    button.prop('disabled', true);
+  } else {
+    message.append(`<p>You got it wrong. Try again.</p>`)
+  }
+}
+
+//creates the markup
+function setupQuestion(index, item) {
   const number = index + 1;
   const {
     question,
@@ -63,25 +81,18 @@ $.each(questioninfo, function (index, item) {
   } = item
 
   const questionMarkup = createQuestion(question, number, hint);
-  $('#questions').append(questionMarkup);
+  const questionElement = $('#questions').append(questionMarkup);
+  $('.question-and-answer').eq(index).find('form').on('submit', function (e) {
+    answerHandler(number, answer, e);
+  });
+}
 
-  const container = $('.question-and-answer').eq(index);
-  const form = container.find('form');
-  const button = container.find('input[type="submit"]');
-  const message = container.find('.message');
+function main() {
+  //go through each question in questioninfo 
+  // and setup the markup and submit for each
+  $.each(questioninfo, setupQuestion);
+}
 
-  form.on('submit', function (e) {
-    e.preventDefault();
-    let typedAnswer = e.target.elements[0].value;
-    $('#answers').append(`<p>Answer to question ${number}: ${typedAnswer}</p>`);
-
-    if (typedAnswer.toLowerCase() == answer.toLowerCase()) {
-      answers.push(typedAnswer);
-      message.append(`<p>You got it right!</p>`);
-      button.prop('disabled', true);
-    } else {
-      message.append(`<p>You got it wrong. Try again.</p>`)
-    }
-  })
+$('document').ready(function () {
+  main();
 });
-
