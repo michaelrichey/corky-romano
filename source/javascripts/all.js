@@ -15,78 +15,62 @@ let answers = []
 
 let questioninfo = [
   {
-    questionid: '#question1',
-    answerid: "#answer1",
-    message: "#message1",
-    buttonid: "#button1",
     question: "What is the first temple you have to beat as Adult Link in The Legend of Zelda: Ocarina of Time?",
-    answer: "forest temple",
-    number: "1"
+    hint: "Not The Great Deku Tree",
+    answer: "forest temple"
   },
   {
-    questionid: '#question2',
-    answerid: "#answer2",
-    message: "#message2",
-    buttonid: "#button2",
     question: "Which member of musical duo They Might Be Giants plays guitar?",
     answer: "john flansburgh",
-    number: "2"
+    hint: "Not John Linnel"
   },
   {
-    questionid: '#question3',
-    answerid: "#answer3",
-    message: "#message3",
-    buttonid: "#button3",
     question: "What cereal company is best known for licensed character cereals like Batman, Ghostbusters, Barbie, Cabbage Patch Kids, WWF, and Nintendo (and they were also a subsidiary of pet food company Purina)?",
     answer: "ralston",
-    number: "3"
+    hint: "Not Quaker"
   },
   {
-    questionid: '#question4',
-    answerid: "#answer4",
-    message: "#message4",
-    buttonid: "#button4",
     question: "What Microsoft console is sometimes affectionately called 'The Dreamcast 2' because of its large number of Sega exclusives that were originally meant for the Dreamcast?",
     answer: "xbox",
-    number: "4"
+    hint: "Not Microsoft Bob"
   },
   {
-    questionid: '#question5',
-    answerid: "#answer5",
-    message: "#message5",
-    buttonid: "#button5",
     question: "What Teddy Grahams spin-off cookie was superior to Dunkaroos, but is not getting a revival is 2020 for God knows what reason?",
     answer: "dizzy grizzlies",
-    number: "5"
+    hint: "Not Gummi Bears"
   }
 ]
 
 $.each(questioninfo, function (index, item) {
-
-  let {
-    questionid,
-    answerid,
-    message,
-    buttonid,
+  const number = index + 1;
+  const {
     question,
     answer,
-    number
+    hint,
   } = item
 
-  $(questionid).append(`<p>${question}</p>`)
+  const container = $('.question-and-answer').eq(index);
+  const form = container.find('form');
+  const header = container.find('h2');
+  const inputText = container.find('input[type="text"]');
+  const button = container.find('input[type="submit"]');
+  const message = container.find('.message');
 
-  $(answerid).on('submit', function (e) {
+  inputText.prop('placeholder', hint);
+  header.text(`Question ${number}`);
+  $(`<p>${question}</p>`).insertAfter(header);
+
+  form.on('submit', function (e) {
     e.preventDefault();
     let typedAnswer = e.target.elements[0].value;
     $('#answers').append(`<p>Answer to question ${number}: ${typedAnswer}</p>`);
 
     if (typedAnswer.toLowerCase() == answer.toLowerCase()) {
       answers.push(typedAnswer);
-      $(message).append(`<p>You got it right!</p>`);
-
-      $(buttonid).prop('disabled', true);
+      message.append(`<p>You got it right!</p>`);
+      button.prop('disabled', true);
     } else {
-      $(message).append(`<p>You got it wrong. Try again.</p>`)
+      message.append(`<p>You got it wrong. Try again.</p>`)
     }
   })
 })
@@ -111,3 +95,16 @@ $.each(questioninfo, function (index, item) {
 
 })
 */
+
+function addQuestion(questions, question, answer) {
+  questions.push({
+    questionid: `#question${questions.length + 1}`,
+    answerid: `#answer${questions.length + 1}`,
+    message: `#message${questions.length + 1}`,
+    buttonid: `#button1${questions.length + 1}`,
+    question,
+    answer,
+    number: questions.length + 1
+  });
+}
+
