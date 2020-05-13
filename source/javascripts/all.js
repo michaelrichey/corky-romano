@@ -41,6 +41,19 @@ let questioninfo = [
   }
 ]
 
+function createQuestion(question, number, hint) {
+  return `
+    <div class="question-and-answer">
+      <h2>Question ${number}</h2>
+      <p>${question}</p>
+      <form>
+        <input type="text" placeholder="${hint}"/>
+        <input type="submit"/> 
+      </form>
+      <div class="message"></div>
+    </div>`;
+}
+
 $.each(questioninfo, function (index, item) {
   const number = index + 1;
   const {
@@ -49,16 +62,13 @@ $.each(questioninfo, function (index, item) {
     hint,
   } = item
 
+  const questionMarkup = createQuestion(question, number, hint);
+  $('#questions').append(questionMarkup);
+
   const container = $('.question-and-answer').eq(index);
   const form = container.find('form');
-  const header = container.find('h2');
-  const inputText = container.find('input[type="text"]');
   const button = container.find('input[type="submit"]');
   const message = container.find('.message');
-
-  inputText.prop('placeholder', hint);
-  header.text(`Question ${number}`);
-  $(`<p>${question}</p>`).insertAfter(header);
 
   form.on('submit', function (e) {
     e.preventDefault();
@@ -73,38 +83,5 @@ $.each(questioninfo, function (index, item) {
       message.append(`<p>You got it wrong. Try again.</p>`)
     }
   })
-})
-
-/*
-  // const formElement = $(item.id);
-  // formElement.on('submit', function (e) {
-  //   e.preventDefault()
-  //   console.log(e.target.elements[0].value)
-  //   answers.push(e.target.elements[0].value)
-
-  //   let answer1 = document.createElement('p')
-  //   answer1.textContent = `Answer to question ${item.number}: ${e.target.elements[0].value}`
-  //   document.querySelector("#answers").appendChild(answer1)
-  // })
-  $(item.id).on('submit', (e) => e.preventDefault());
-  $(`${item.id} input[type="submit"]`)
-    .click((e) => {
-      $(e.target).toggleClass('btn-submitted');
-      $('<div>You did it</div>').addClass('foo').insertAfter($(e.target));
-    })
-
-})
-*/
-
-function addQuestion(questions, question, answer) {
-  questions.push({
-    questionid: `#question${questions.length + 1}`,
-    answerid: `#answer${questions.length + 1}`,
-    message: `#message${questions.length + 1}`,
-    buttonid: `#button1${questions.length + 1}`,
-    question,
-    answer,
-    number: questions.length + 1
-  });
-}
+});
 
