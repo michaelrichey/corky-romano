@@ -76,15 +76,15 @@ $.each(questioninfo, function (index, item) {
   $(questionid).append(`<p>${question}</p>`)
 
   $(answerid).on('submit', function (e) {
-    e.preventDefault()
-    let typedAnswer = e.target.elements[0].value
-    $('#answers').append(`<p>Answer to question ${number}: ${typedAnswer}</p>`)
+    e.preventDefault();
+    let typedAnswer = e.target.elements[0].value;
+    $('#answers').append(`<p>Answer to question ${number}: ${typedAnswer}</p>`);
 
     if (typedAnswer.toLowerCase() == answer.toLowerCase()) {
-      answers.push(typedAnswer)
-      $(message).append(`<p>You got it right!</p>`)
+      answers.push(typedAnswer);
+      $(message).append(`<p>You got it right!</p>`);
 
-      document.querySelector(buttonid).disabled = true
+      $(buttonid).prop('disabled', true);
     } else {
       $(message).append(`<p>You got it wrong. Try again.</p>`)
     }
