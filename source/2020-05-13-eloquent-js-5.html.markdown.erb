@@ -38,6 +38,7 @@ All these methods require you to pass in a function that they need to function. 
 
 <script>
 
+// your own loop
 let loop = function (value, testFunction, updateFunction, bodyFunction) {
 
     let i = value
@@ -54,5 +55,36 @@ loop(3, n => n > 0, n => n - 1, console.log)
 // → 3
 // → 2
 // → 1
+
+// every
+
+let every = function (array, test) {
+
+    emptyArray = []
+
+    array.forEach(function (item) {
+        if (test(item)) {
+            emptyArray.push(item)
+        } else {
+            console.log ('no go')
+        }
+    })
+
+    if (array.length == emptyArray.length) {
+        return true
+    } else {
+        return false
+    }
+    
+
+
+}
+
+console.log(every([1, 3, 5], n => n < 10));
+// → true
+console.log(every([2, 4, 16], n => n < 10));
+// → false
+console.log(every([], n => n < 10));
+// → true
 
 </script>
