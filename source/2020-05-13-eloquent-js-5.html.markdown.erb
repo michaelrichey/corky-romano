@@ -82,7 +82,7 @@ let every = function (array, test) {
 */
 
 let every = function (array, test) {
-    if (array.some(test) == true || !array.some(test)) {
+    if (array.some(test) == true && !array.some(test)) {
         return true
     } else {
         return false
