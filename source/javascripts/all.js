@@ -38,36 +38,39 @@ let questioninfo = [
 
 $.each(questioninfo, function (index, item) {
 
-  let number = index + 1
-
   let {
     question,
     answer
   } = item
 
+  let number = index + 1
+
   let container = $('.question-and-answer').eq(index)
   let form = container.find('form')
   let header = container.find('h2')
-  let inputText = container.find('input[type="text"]')
-  let button = container.find('input[type="submit"]')
   let message = container.find('.message')
+  let answers = $('#answers')
+  let button = container.find('input[type="submit"]')
 
   header.text(`Question ${number}`)
-
-  $(`<p>${question}</p>`).insertAfter(header)
+  header.after(`<p>${question}</p>`)
 
   form.on('submit', function (e) {
-    e.preventDefault();
-    let typedAnswer = e.target.elements[0].value;
-    $('#answers').append(`<p>Answer to question ${number}: ${typedAnswer}</p>`);
+
+    e.preventDefault()
+    let typedAnswer = e.target.elements[0].value
 
     if (typedAnswer.toLowerCase() == answer.toLowerCase()) {
-      answers.push(typedAnswer);
-      message.append(`<p>You got it right!</p>`);
 
-      button.prop('disabled', true);
+      message.append(`<p>You got it right!</p>`)
+      answers.append(`<p>Your answer to Question ${number}: ${typedAnswer}</p>`)
+      button.prop('disabled', true)
+
     } else {
-      message.append(`<p>You got it wrong. Try again.</p>`)
+
+      message.append(`<p>Not correct. But try again!</p>`)
+      answers.append(`<p>Your answer to Question ${number}: ${typedAnswer}</p>`)
+
     }
   })
 })
