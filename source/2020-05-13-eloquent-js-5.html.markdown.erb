@@ -8,7 +8,23 @@ published: false
 
 Welcome to the notes for [Chapter 5: Higher Order Functions](https://eloquentjavascript.net/05_higher_order.html). Let's learn all about these things.
 
+## Concepts
+
+Longer, bigger programs are harder to read and parse. Also, their size gives more space for bugs to hide. More to read, and more possibility for bugs and errors.
+
+A smaller program, perhaps one line, which uses other functions within functions can be easier to read and has less space for bugs to hide (in that one line anyway).
+
 ### New Vocabulary
+
+**Abstractions**
+
+In programming, abstractions are these lines of code that use functions in functions in functions to make a line of code more "readable" to a human. It abstracts what's actually going on so you can talk about the code on higher level of understanding.
+
+**Abstracting Repetition**
+
+This section breaks down how a simple Codecademy-style function can be broken down into more and more reusable parts and named so each function clearly states what it does—thus making the whole thing readable.
+
+Finally, it shows how sometimes it's not worth passing in a named function, but rather writing a function directly in the parens to pass in as an argument.
 
 **Higher-order functions**
 
@@ -31,6 +47,14 @@ You can use reduce to combine all the elements in an array into a single value.
 The some method tests whether any element matches a given predicate function.
 
 [Read more on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some)
+
+**Composability**
+
+When tasks get complex, the more abstract programs are easier to read, though they're harder on the computer. If you're dealing with huge arrays and working with them over and over, the less abstract, hard-to-read version will help the computer get its job done.
+
+## Quotes to Remember
+
+"It is a useful skill, in programming, to notice when you are working at too low a level of abstraction."
 
 ---
 
